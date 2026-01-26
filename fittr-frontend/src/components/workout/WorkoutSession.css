@@ -1,0 +1,139 @@
+.workout-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(20px);
+  color: white;
+  padding: 32px 28px;
+  border-radius: 20px;
+  max-width: 400px;
+  margin: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(56, 189, 248, 0.15);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.workout-card:hover {
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 12px 40px rgba(56, 189, 248, 0.2);
+}
+
+.workout-card h3 {
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.workout-timer {
+  font-size: 52px;
+  font-weight: 700;
+  margin: 24px 0;
+  font-family: 'Courier New', monospace;
+  color: #38bdf8;
+  letter-spacing: 2px;
+}
+
+.workout-actions {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.workout-btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  background: #38bdf8;
+  color: #020617;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.workout-btn:hover {
+  background: #0ea5e9;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+  transform: translateY(-2px);
+}
+
+.workout-select {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  width: 100%;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .workout-card {
+    padding: 24px 20px;
+    max-width: 100%;
+  }
+
+  .workout-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .workout-timer {
+    font-size: 44px;
+    margin: 20px 0;
+  }
+
+  .workout-actions {
+    margin-bottom: 16px;
+    gap: 10px;
+  }
+
+  .workout-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .workout-select {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .workout-card {
+    padding: 20px 16px;
+  }
+
+  .workout-card h3 {
+    font-size: 16px;
+  }
+
+  .workout-timer {
+    font-size: 36px;
+  }
+
+  .workout-btn {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+
+  .workout-select {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
+/* ===== Optional shake animation ===== */
+.shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}

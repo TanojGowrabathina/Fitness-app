@@ -1,0 +1,90 @@
+/* ===== FORM CONTAINER ===== */
+.add-goal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== TITLE ===== */
+.add-goal-form h3 {
+  text-align: center;
+  color: #e5e7eb;
+  margin-bottom: 6px;
+}
+
+/* ===== INPUTS ===== */
+.add-goal-input {
+  padding: 10px;
+  border-radius: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(2, 6, 23, 0.7);
+  color: #ffffff;
+
+  outline: none;
+  font-size: 14px;
+}
+
+.add-goal-input::placeholder {
+  color: #9ca3af;
+}
+
+/* ===== DATE PICKER FIX ===== */
+.add-goal-date {
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+/* ===== BUTTON ===== */
+.add-goal-btn {
+  margin-top: 10px;
+  padding: 10px;
+
+  border-radius: 12px;
+  border: none;
+
+  background: #38bdf8;
+  color: #020617;
+  font-weight: bold;
+  font-size: 15px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.add-goal-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+}
+
+.add-goal-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== SUCCESS STATE ===== */
+.add-goal-btn.success {
+  background: #22c55e;
+  color: #052e16;
+}
+
+/* ===== SHAKE ANIMATION ===== */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
+}

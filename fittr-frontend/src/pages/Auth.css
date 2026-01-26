@@ -1,0 +1,112 @@
+/* ===============================
+   AUTH CONTAINER
+=============================== */
+
+.auth-container {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+/* ===============================
+   AUTH CARD
+=============================== */
+
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: 380px;
+  padding: 30px;
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.35);
+  color: white;
+  text-align: center;
+}
+
+.auth-card h2 {
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   INPUTS & SELECTS
+=============================== */
+
+.auth-card input,
+.auth-card select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(2, 6, 23, 0.85);
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+
+.auth-card input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.auth-card select option {
+  background: #020617;
+  color: white;
+}
+
+/* ===============================
+   BUTTON
+=============================== */
+
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: #38bdf8;
+  color: #020617;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.auth-card button:hover {
+  background: #0ea5e9;
+}
+
+.auth-card button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   LINKS
+=============================== */
+
+.auth-link {
+  margin-top: 14px;
+  font-size: 14px;
+}
+
+.auth-link a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}

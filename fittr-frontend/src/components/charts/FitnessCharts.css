@@ -1,0 +1,99 @@
+/* ===== Main Charts Container ===== */
+.fitness-charts {
+  display: flex;
+  gap: 28px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+/* ===== Individual Chart Card ===== */
+.chart-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(20px);
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(56, 189, 248, 0.15);
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 12px 40px rgba(56, 189, 248, 0.2);
+}
+
+/* ===== Bar Chart ===== */
+.bar-chart {
+  flex: 1 1 55%;
+  min-width: 320px;
+}
+
+/* ===== Pie Chart ===== */
+.pie-chart {
+  flex: 1 1 40%;
+  min-width: 280px;
+}
+
+/* ===== Chart Titles ===== */
+.chart-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+  .fitness-charts {
+    gap: 24px;
+  }
+
+  .bar-chart,
+  .pie-chart {
+    flex: 1 1 100%;
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .fitness-charts {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .chart-card {
+    padding: 20px;
+  }
+
+  .chart-title {
+    font-size: 17px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .chart-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fitness-charts {
+    gap: 12px;
+  }
+
+  .chart-card {
+    padding: 12px;
+  }
+
+  .chart-title {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+}
