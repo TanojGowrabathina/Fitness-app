@@ -19,7 +19,7 @@ ChartJS.register(
   Legend
 );
 
-function FitnessCharts({ activities }) {
+function FitnessCharts({ activities = [] }) {
 
   const labels = activities.map(a => a.category?.name || "Unknown");
   const durations = activities.map(a => a.duration || 0);

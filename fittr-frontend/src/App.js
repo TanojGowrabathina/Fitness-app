@@ -6,11 +6,12 @@ import BodyBmi from "./pages/BodyBmi";
 import Register from "./pages/Register";
 import Workouts from "./pages/Workouts";
 import Nutrition from "./pages/Nutrition";
-
+import Progress from "./pages/progress";
+import Goals from "./pages/Goals";
 
 // dummy pages (create later if missing)
-const Goals = () => <h1>Goals Page</h1>;
-const Progress = () => <h1>Progress Page</h1>;
+
+
 
 
 function App() {
