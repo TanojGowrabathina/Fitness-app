@@ -1,4 +1,4 @@
-// package org.svcet.fittr.config;
+package org.svcet.fittr.config;
 
 // import org.springframework.context.annotation.Bean;
 // import org.springframework.context.annotation.Configuration;
