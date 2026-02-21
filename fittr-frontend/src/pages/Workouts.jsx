@@ -256,7 +256,7 @@ function Workouts() {
     ],
   };
 
-  const [scrollPositions, setScrollPositions] = useState({});
+  // const [scrollPositions, setScrollPositions] = useState({});
 
   const handleScroll = (category, direction) => {
     const carousel = document.getElementById(`carousel-${category}`);

@@ -17,10 +17,10 @@ function Goals() {
     }
   };
 
-  useEffect(() => {
-    if (userId) loadGoals();
-  }, [userId]);
-
+ useEffect(() => {
+  loadGoals();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
   return (
     <div>
       <h2 style={{ marginBottom: "20px" }}>🎯 Goals</h2>
