@@ -1,5 +1,4 @@
-import { useState } from "react";
-import "../pages/Workouts.css";
+// import "../pages/Workouts.css";
 
 function Workouts() {
   // Dummy data with Coursera-style video links
