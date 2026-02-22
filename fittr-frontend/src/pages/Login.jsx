@@ -100,6 +100,8 @@ import { useNavigate, Link } from "react-router-dom";
 import bg from "../assets/gym-bg.png";
 import "./Auth.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -116,10 +118,8 @@ function Login() {
     try {
       setLoading(true);
 
-      const API = process.env.REACT_APP_API_URL;
-
       const res = await axios.post(
-        `${API}/api/auth/login`,
+        `${API_URL}/api/auth/login`,
         { email, password }
       );
 
