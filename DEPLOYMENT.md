@@ -1,5 +1,12 @@
 # Fittr - Fitness Tracking Application
 
+## ✅ Recent Fixes
+
+- **PasswordEncoder Bean**: Added BCryptPasswordEncoder bean to SecurityConfig to fix authentication service initialization errors
+- **Database Configuration**: Configured MySQL connection with environment variables
+- **CORS Configuration**: Fixed cross-origin requests for Vercel frontend
+- **API Endpoint Configuration**: Centralized backend URL configuration for environment-specific deployments
+
 ## Deployment Guide
 
 ### Backend Deployment (Spring Boot Java)
@@ -70,11 +77,22 @@ The compiled JAR will be at: `target/fittr-0.0.1-SNAPSHOT.jar`
 4. Deploy
 
 ##### Option 2: Render.com
-1. Create new Web Service
+1. Create new Web Service on render.com
 2. Connect GitHub repository
-3. Set Build Command: `./mvnw clean package`
-4. Set Start Command: `java -jar target/fittr-0.0.1-SNAPSHOT.jar`
-5. Set environment variables
+3. **Important**: Before deploying, add these environment variables in Render dashboard:
+   ```
+   SPRING_DATASOURCE_URL=jdbc:mysql://[host]:3306/fittr?useSSL=true&serverTimezone=UTC
+   SPRING_DATASOURCE_USERNAME=[your-db-user]
+   SPRING_DATASOURCE_PASSWORD=[your-db-password]
+   CLOUDINARY_CLOUD_NAME=[your-cloud-name]
+   CLOUDINARY_API_KEY=[your-api-key]
+   CLOUDINARY_API_SECRET=[your-api-secret]
+   ```
+4. Set Build Command: `./mvnw clean package -DskipTests`
+5. Set Start Command: `java -jar target/fittr-0.0.1-SNAPSHOT.jar`
+6. Deploy
+7. Get your backend URL from Render dashboard (e.g., `https://fittr-backend.onrender.com`)
+8. Update Vercel frontend with this URL as `REACT_APP_API_URL`
 
 ##### Option 3: Heroku
 1. Install Heroku CLI
@@ -178,15 +196,22 @@ Base URL: `/api/v1/`
 
 ## Troubleshooting
 
+### PasswordEncoder Bean Error
+**Error**: `No qualifying bean of type 'org.springframework.security.crypto.password.PasswordEncoder'`
+
+**Solution**: ✅ Already fixed in SecurityConfig.java - BCryptPasswordEncoder bean is now provided.
+
 ### Database Connection Error
 - Ensure MySQL is running
 - Check database URL format and credentials
 - Verify firewall allows database access
+- Test connection: `mysql -h [host] -u [user] -p`
 
 ### CORS Errors
 - Check browser console for specific origin
 - Update SecurityConfig with your frontend URL
 - Ensure `OPTIONS` requests are allowed
+- Verify frontend and backend are on same protocol (both HTTPS or both HTTP for local)
 
 ### Port Already in Use
 ```bash
@@ -198,6 +223,29 @@ taskkill /PID [PID] /F
 lsof -i :8080
 kill -9 [PID]
 ```
+
+### Render.com Deployment Issues
+**Issue**: Container keeps restarting
+- Check logs: `tail -f render.log`
+- Verify all environment variables are set
+- Check database is accessible from container
+- Ensure build command completes successfully
+
+**Issue**: 502 Bad Gateway
+- Wait 2-3 minutes for container to finish initializing
+- Check if backend is listening on correct PORT (should be `$PORT` environment variable)
+- Verify no startup errors in logs
+
+### Vercel Frontend Issues
+**Issue**: "Cannot find module" errors
+- Run `npm install` to install all dependencies
+- Check Node.js version compatibility (should be 16+)
+- Clear `.next` or `build` directory
+
+**Issue**: API requests failing
+- Check `REACT_APP_API_URL` environment variable is set in Vercel
+- Ensure backend URL is accessible and has CORS configured
+- Test with curl: `curl -v https://your-backend-url/api/categories`
 
 ## Security Notes
 
