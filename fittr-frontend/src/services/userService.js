@@ -1,7 +1,8 @@
 import axios from "axios";
+import API_CONFIG from "../config/api.config";
 
-const AUTH_API = "http://localhost:8080/api/auth";
-const USER_API = "http://localhost:8080/api/users";
+const AUTH_API = `${API_CONFIG.BASE_URL}/${API_CONFIG.ENDPOINTS.AUTH}`;
+const USER_API = `${API_CONFIG.BASE_URL}/${API_CONFIG.ENDPOINTS.USERS}`;
 
 /* ===============================
    🔐 AUTH

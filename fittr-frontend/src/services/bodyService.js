@@ -1,6 +1,7 @@
 import axios from "axios";
+import API_CONFIG from "../config/api.config";
 
-const API = "http://localhost:8080/api/users";
+const API = `${API_CONFIG.BASE_URL}/${API_CONFIG.ENDPOINTS.USERS}`;
 
 // Save height & weight
 export const saveBody = (userId, height, weight) => {
