@@ -39,7 +39,8 @@ public class SecurityConfig {
 
         configuration.setAllowedOrigins(Arrays.asList(
                 "http://localhost:3000",
-                "https://fitness-app-two-virid.vercel.app"
+                "https://fitness-app-two-virid.vercel.app",
+                "https://fitness-app-tanojgowrathinas-projects.vercel.app"
         ));
 
         configuration.setAllowedMethods(Arrays.asList(
